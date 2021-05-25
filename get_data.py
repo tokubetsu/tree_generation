@@ -3,6 +3,7 @@ from staff_func import make_cell, NumItem, Cell, file_read, parse_conllu, save_d
 
 
 data_dir = 'data/'  # глобальная переменная с директорией с изначальными данными
+filename_lst = ['ru_syntagrus-ud-dev.conllu', 'ru_syntagrus-ud-test.conllu', 'ru_syntagrus-ud-train.conllu']
 
 
 def get_tree(sent):  # создаем дерево зависимостей для предложения
@@ -158,9 +159,7 @@ def make_freq(data):  # создает частотный словарь
 
 
 def get_statistics():
-    global data_dir  # подгружаем глабальную переменную с директорией
-
-    filename_lst = ['ru_syntagrus-ud-dev.conllu', 'ru_syntagrus-ud-test.conllu', 'ru_syntagrus-ud-train.conllu']
+    global data_dir, filename_lst  # подгружаем глабальные переменные
 
     conllu_data = []
     for name in filename_lst:  # складываем все прочитанные данные в одну переменную
